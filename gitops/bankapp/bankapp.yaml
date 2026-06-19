@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: bankapp
-          image: pratikgharde12/bank-app-bff:Release-1.0.1  # replace with your built/pushed image
+          image: pratikgharde12/bankapp:Release-1.0.8
           ports:
             - containerPort: 8080
           env:
