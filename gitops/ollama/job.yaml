@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ollama-pull-model
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: ollama-pull-model
+          image: ollama/ollama
+          env:
+            - name: OLLAMA_HOST
+              value: "ollama"
+          command: ["/bin/sh", "-c", "ollama pull tinyllama"]
+          volumeMounts:
+            - name: ollama-data
+              mountPath: /root/.ollama
+      volumes:
+        - name: ollama-data
+          persistentVolumeClaim:
+            claimName: ollama-data
