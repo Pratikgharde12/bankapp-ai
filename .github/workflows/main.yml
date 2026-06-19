@@ -43,7 +43,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-          git add gitops/bankapp/deployment.yaml
+          git add gitops/bankapp/bankapp.yaml
           git commit -m "Update image to $IMAGE_TAG" || echo "No changes"
 
           git push
