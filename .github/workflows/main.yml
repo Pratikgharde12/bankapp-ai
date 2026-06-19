@@ -36,7 +36,7 @@ jobs:
 
       - name: Update Kubernetes Manifest
         run: |
-          sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG|g" gitops/bankapp/bankapp.yaml
+          sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG|g" ./gitops/bankapp/bankapp.yaml
 
       - name: Commit Updated Manifest
         run: |
