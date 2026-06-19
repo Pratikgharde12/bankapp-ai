@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'gitops/bankapp/bankapp.yaml'
 
 env:
   IMAGE_NAME: bankapp
